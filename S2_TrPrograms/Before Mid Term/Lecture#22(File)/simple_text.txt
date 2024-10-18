@@ -1,0 +1,4 @@
+This is a simple text file.
+It contains a few lines of text to demonstrate how text files work.
+You can add more lines or modify the content as needed.
+Feel free to use this file for testing or experimenting with file operations in your programming code.

@@ -1,0 +1,184 @@
+# CSE 2040 - Lecture 31 - Example 
+
+# Code implementing basic clock and its sub classes
+
+# This module provides three classes
+# Base class - BasicClock
+# Sub classes - DateDayClock, BasicAMPMClock, BasicMilitaryClock
+
+
+import datetime # For date and time
+import calendar # For calendar day
+from tkinter import * # For GUI programming
+
+# Defintion of class base class - BasicClock
+
+class BasicClock:
+     ''' This is the base class that stores basic information about a clock '''
+     def __init__(self):
+          ''' Constructor that creates the GUI and sets the time in HH:MM:SS '''
+          self.__clockApp = Tk()
+          
+
+     def setTitle(self):
+          self.__clockApp.title('Basic Clock')
+
+     def setHMSEntryBox(self, reliefType="raised",fgColor="black"):
+          ''' Entry box for hour, minutes and seconds '''
+          self.__hourBox = Entry(self.__clockApp,font="Verdana 24 bold",relief=reliefType,bg="grey",bd=4,fg=fgColor)
+          self.__minutesBox = Entry(self.__clockApp,font="Verdana 24 bold",relief=reliefType,bg="grey",bd=4,fg=fgColor)
+          self.__secondsBox = Entry(self.__clockApp,font="Verdana 24 bold",relief=reliefType,bg="grey",bd=4,fg=fgColor)
+
+     def placeHMSEntryBox(self):
+          ''' Placement for hour, minutes and seconds entry boxes '''          
+          self.__hourBox.place(x=15,y=60,width=50)
+          self.__minutesBox.place(x=75,y=60,width=50)
+          self.__secondsBox.place(x=135,y=60,width=50)
+     
+     def getHandle(self):
+          ''' Returning the handle of the clock application'''
+          return self.__clockApp
+
+     def getHourBox(self):
+          ''' Returning the hour box created in the base class '''
+
+          return self.__hourBox
+
+     def getMinuteBox(self):
+          ''' Returning the hour box created in the base class '''
+
+          return self.__minutesBox
+
+     def getSecondBox(self):
+          ''' Returning the hour box created in the base class '''
+
+          return self.__secondsBox
+
+     def displayHMS(self,format):
+          ''' Displaying the clock '''
+
+          # Getting the current time and converting to string
+          self.__currentTime = datetime.datetime.now()
+          self.__currentTime = self.__currentTime.time()
+          
+          # Setting the format
+          self.__currentTime = self.__currentTime.strftime(format)
+          
+          # Storing values of hour, minutes and seconds into the Entry boxes
+          self.__hourBox.insert(0,self.__currentTime[0:2])
+          Label(self.__clockApp,text=":",font="Verdana 16 bold").place(x=62,y=68)
+          self.__minutesBox.insert(0,self.__currentTime[3:5])
+          Label(self.__clockApp,text=":",font="Verdana 16 bold").place(x=122,y=68)
+          self.__secondsBox.insert(0,self.__currentTime[6:8])
+
+     def getDateTime(self):
+          ''' Return date and time '''
+
+          return self.__currentTime
+     
+class BasicAMPMClock(BasicClock):
+     ''' This clock displays time in AM-PM format '''
+          
+     def __init__(self):
+          ''' Constructor that calls the super class constructor
+               and other methods to display the UI for the clock '''
+          BasicClock.__init__(self)
+          self.setTitle()
+          BasicClock.setHMSEntryBox(self,"flat","blue")
+          BasicClock.placeHMSEntryBox(self)
+          self.displayHMS()
+
+     def setTitle(self):
+          BasicClock.getHandle(self).title("Basic AM-PM Clock")
+          
+     def displayHMS(self):
+          ''' Setting the format for the clock and calling super class method '''          
+
+          clockDisplayFormat = "%I:%M:%S %p"
+          BasicClock.displayHMS(self,clockDisplayFormat)
+
+          # Creating a label to display AM or PM
+          ampmTag = BasicClock.getDateTime(self)[9:11]
+          ampmLabel = Label(BasicClock.getHandle(self),text=ampmTag,fg="red")
+          ampmLabel.place(x=20,y=102)
+
+class BasicMilitaryClock(BasicClock):
+     ''' This clock displays time in AM-PM format '''
+          
+     def __init__(self):
+          ''' Constructor that calls the super class constructor
+               and other methods to display the UI for the clock '''
+          BasicClock.__init__(self)
+          self.setTitle()
+          BasicClock.setHMSEntryBox(self)
+          BasicClock.placeHMSEntryBox(self)
+          self.displayHMS()
+
+     def setTitle(self):
+          BasicClock.getHandle(self).title("Basic Military Clock")
+
+     def displayHMS(self):
+          ''' Setting the format for the clock and calling super class method '''          
+
+          clockDisplayFormat = "%H:%M:%S"
+          BasicClock.displayHMS(self,clockDisplayFormat)
+
+class DateDayClock(BasicAMPMClock):
+     ''' This clock displays time in AM-PM format along with Day and Date '''
+          
+     def __init__(self):
+          ''' Constructor that calls the super class constructor
+               and other methods to display the UI for the clock '''
+          BasicAMPMClock.__init__(self)
+          self.setTitle()
+          self.displayDateDay()
+
+     def setTitle(self):
+          ''' Displaying its own title '''
+          BasicClock.getHandle(self).title("AM-PM Clock with Day and Date")
+
+     def displayDateDay(self):
+          ''' Displaying the date and day '''
+
+          dateLabel = Label(BasicClock.getHandle(self), text = "Date")
+          dayLabel = Label(BasicClock.getHandle(self), text = "Day")
+
+          # Placement for date and day labels
+          
+          dateLabel.place(x=40,y=130)
+          dayLabel.place(x=130,y=130)
+
+          # Entry box for date and day
+          
+          date = Entry(BasicClock.getHandle(self), bg="grey")
+          day = Entry(BasicClock.getHandle(self), bg="grey")
+
+          # Placement for date and day entry boxes
+          
+          date.place(x=10,y=150,width=95)
+          day.place(x=110,y=150,width=70)
+
+          # Getting the current date
+          
+          currentDate = datetime.datetime.now()
+          currentDate = currentDate.date()
+          
+          # Getting the day of the week
+          
+          dayOfWeek = calendar.day_name[currentDate.weekday()]
+
+          # Storing values of date and day
+          
+          date.insert(0,currentDate)
+          day.insert(0,dayOfWeek)
+          
+tt = datetime.datetime.now().time()
+print(tt)          
+
+myClock1 = BasicAMPMClock()
+myClock2 = BasicMilitaryClock()
+myClock3 = DateDayClock()
+
+clock = Tk()
+clock.mainloop()
+

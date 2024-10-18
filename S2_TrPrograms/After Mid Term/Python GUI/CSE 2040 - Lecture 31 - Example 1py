@@ -1,0 +1,32 @@
+# CSE 2040 - Lecture 30 - Example 
+
+# Example illustrating use of tkinter
+
+import datetime # For date and time
+import calendar # For calendar day
+from tkinter import * # For GUI programming
+
+drawingBoard = Tk()
+drawingBoard.title("Drawing Board")
+
+newDrawingBoard = Tk()
+newDrawingBoard.title("My new drawing board")
+
+hhLabel = Label(drawingBoard, text = "Hour")
+hhLabel.place(x=35,y=40)
+
+#hour = Entry(drawingBoard)#default bg="white"
+hour = Entry(drawingBoard,bg="gray")
+hour.place(x=70,y=40,width=50)
+
+currentTime = datetime.datetime.now()
+currentTime = currentTime.time()
+currentTime = currentTime.strftime("%H:%M:%S")
+
+#hour.insert(0,currentTime) # H, M, S 
+hour.insert(0,currentTime[0:2])  # H
+
+hhNewLabel = Label(newDrawingBoard, text = "New Hour")
+hhNewLabel.place(x=100,y=40)
+
+drawingBoard.mainloop()

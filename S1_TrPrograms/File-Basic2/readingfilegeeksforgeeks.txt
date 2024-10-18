@@ -1,0 +1,4 @@
+https://www.geeksforgeeks.org/reading-writing-text-files-python/
+
+https://www.geeksforgeeks.org/reading-and-writing-lists-to-a-file-in-python/
+https://www.geeksforgeeks.org/file-handling-python/

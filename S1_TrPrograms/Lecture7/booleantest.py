@@ -1,0 +1,22 @@
+print(10 > 9)
+print(10 == 9)
+print(10 < 9) 
+print(bool("Hello"))
+print(bool(15))
+
+print(bool(False))
+print(bool(None))
+print(bool(0))
+print(bool(""))
+print(bool(()))
+print(bool([]))
+print(bool({}))
+
+print(bool(True))
+#print(bool(None))
+print(bool(1))
+print(bool("ee"))
+print(bool(()))
+print(bool(['0','a']))
+print(bool({'3','7.5'}))
+

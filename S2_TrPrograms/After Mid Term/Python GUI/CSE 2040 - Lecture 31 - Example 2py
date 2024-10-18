@@ -1,0 +1,21 @@
+# CSE 2040 - Lecture 45 - Example 
+
+# Illustrating how events are handled in Python
+
+from tkinter import *
+
+def getString(event):
+     print(event)
+
+root = Tk()
+root.title("Display Person Details")
+
+c1 = Checkbutton(root, text = "First", onvalue = 1, offvalue = 0, height=1, width = 10)
+c1.grid(row=2,column=2)
+c2 = Checkbutton(root, text = "Second", onvalue = 1, offvalue = 0, height=1, width = 10)
+c2.grid(row=3,column=2)
+
+c1.bind("<Button-1>", getString)
+c2.bind("<ButtonRelease-1>", getString)
+
+root.mainloop()

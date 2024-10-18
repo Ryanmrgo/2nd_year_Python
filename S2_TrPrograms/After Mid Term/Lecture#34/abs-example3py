@@ -1,0 +1,31 @@
+from abc import ABC, abstractmethod
+
+class WholeSaler(ABC):
+    def __init__(self):
+        pass
+    
+    def text_books(self):
+        print("Common text books requirement for all retailers. Text books of X class!")
+    
+    @abstractmethod
+    def stationary(self):
+        pass
+
+class Retailer1(WholeSaler):
+    def stationary(self):
+        print("Retailer1 wants some pens")
+
+class Retailer2(WholeSaler):
+    def stationary(self):
+        print("Retailer2 wants some papers")
+
+# Create instances of the subclasses
+retailer1 = Retailer1()
+retailer2 = Retailer2()
+
+# Call methods
+retailer1.text_books()  # Common text books requirement for all retailers.
+retailer1.stationary()  # Retailer1 wants some pens
+print()
+retailer2.text_books()  # Common text books requirement for all retailers.
+retailer2.stationary()  # Retailer2 wants some papers

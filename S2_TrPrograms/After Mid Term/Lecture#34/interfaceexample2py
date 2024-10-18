@@ -1,0 +1,40 @@
+#interface to connect to any database
+from abc import ABC,abstractmethod
+
+class Myclass(ABC):
+    @abstractmethod
+    def printit(self,text):
+        pass
+    @abstractmethod
+    def disconnect(self):
+        pass
+    
+#abs=Myclass()
+
+class IBM(Myclass):
+    def printit(self,text):
+        print(text)
+
+    def disconnect(self):
+        print('Printing completed on IBM printer.')
+        
+class Epson(Myclass):
+    def printit(self,text):
+        print(text)
+
+    def disconnect(self):
+        print('Printing completed on Epson printer.')
+
+class usePrinter:
+    with open('printername.txt', 'r') as f:
+        for line in f:
+            class_name = line.strip()  # Strip leading and trailing whitespaces including newline characters
+            classname = globals().get(class_name)  # Get the class by name, returns None if not found
+            if classname is not None:  # Check if the class exists
+                x = classname()        # Create an object of the class
+                x.printit('Hello, this is sent to printer.')
+                x.disconnect()
+            else:
+                print(f"Class '{class_name}' not found.")
+
+

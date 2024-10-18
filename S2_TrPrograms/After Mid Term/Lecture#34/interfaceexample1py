@@ -1,0 +1,34 @@
+#interface to connect to any database
+from abc import ABC,abstractmethod
+
+class Myclass(ABC):
+    @abstractmethod
+    def connect(self):
+        pass
+    @abstractmethod
+    def disconnect(self):
+        pass
+    
+#abs=Myclass()
+
+class Oracle(Myclass):
+    def connect(self):
+        print('Connecting to oracle database...')
+
+    def disconnect(self):
+        print('Disconnecting to oracle database...')
+        
+class Sybase(Myclass):
+    def connect(self):
+        print('Connecting to sybase database...')
+
+    def disconnect(self):
+        print('Disconnecting to sybase database...')
+
+str=input('Enter database name: ')
+classname=globals()[str]      #conver string into class name
+x=classname()              #create an object to that class
+x.connect()
+x.disconnect()
+
+

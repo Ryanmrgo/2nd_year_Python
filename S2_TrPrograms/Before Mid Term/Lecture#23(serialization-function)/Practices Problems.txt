@@ -1,0 +1,141 @@
+Practices Problems
+
+Problem1-Provide a list comprehension expression for each of the following lists.
+(a) [1, 4, 9, 16, 25]
+(b) [0.25, 0.5, 0.75, 1.0, 1.25. 1.5]
+(c) [('a', 0), ('a', 1), ('a', 2), ('b', 0), ('b', 1), ('b', 2)]
+Problem2
+Write a Python program that creates the matrix
+1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1
+
+Problem-3Are tuples mutable or immutable?
+Problem-4. Are the elements in tuples ordered or unordered?
+Problem-5Given the following dictionary:
+d = {3:0, 5:1, 10:1, 8:2, 15:4}
+Indicate what each of the following code fragments will print:
+(a) print(d)
+(b) for x in d:
+print(x)
+(c) for x in d.keys():
+print(x)
+(d) for x in d.values():
+print(x)
+Problem-6
+Create the Sapnish to English dictionary to describe the English words to Spanish word. And print the  sapanish  word that is similar to  English  form this list
+’hello’ is ’hola’
+’yes’ is ’si’
+’one’is ’uno’
+’two’ is ’dos’
+’three’ ’tres’
+’red’ ’rojo’
+’black’’negro’
+green’ ’verde’
+’blue’ ’azul’
+Problem6
+Write a python program which prints a given list to a reverse 
+string or integers or floating point data elements and print 
+the data elements into another list.
+Example:
+Original list:[13,68,19,40] 
+Reverse list: [40, 19, 68, 13]
+Problem7
+If A and B are sets then Cartesian product is the sets of 
+pairs(a,b) where a is in A and B is in B.
+A×B=(a,b)| a subset of a , b subset of B)
+A=1,3,5
+B=2,4
+(1,2) (1,4 ) (3,2) ,(3,4) ( 5,2) (5,3)
+Write a python program to display the result of Cartesian 
+product which has four data elements and 3 data elements in 
+each list. Notes you need to write your program using 
+comprehension.
+Problem-8
+Write a Python Program to get a list of numbers as input from 
+a user and calculate the sum of it. You have to take input 
+from the user and you need to display the sum of the result 
+of any number of list.
+Problem-9
+Create a tuple that contains data elements 0 to 9 and create 
+another second tuple by adding one element in first tuple as 
+shown in the following. Write a program to print the final 
+tuple that contain adding the data elements of two tuples as 
+shown in the following.
+Tuple1=0,1,2,3,4,5,6,7,8,9
+Tuple2=0,1,2,3,4,5,6,7,8,9,10
+Tuple3=0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3
+Problem-10
+5.1 Assuming that a shop sells only one type of mobile
+accessory, take the name of the shop and the accessory
+the shop and store these data elements into appropriate
+data type. Your program should be able to retrieve the
+data and print the data using python.
+S1 – Battery, S3 – Strap, S5 – Pouch and so on
+5.2 Assuming that a shop sells more than one type of
+mobile accessory, take the name of the shop and
+accessories the shop sells and store these data elements
+into appropriate data type. Your program should be able
+to retrieve the data and print the data.
+S1 – Battery, Pouch, Strap, S3 – Strap, Speaker, Cover,
+and so on
+Problem11
+Imagine that you have the movies list as shown in following
+,display the movie’s title which are start with letter G. You have to
+use comprehension for this python program.
+Notes:str.startswith(search_string, start, end)
+Titles of Movies are
+Star Wars,Gandhi, Casblance, Shawshank Redemption, Toy
+Story, Gone with the wind, Citizen Kane, It’s a wonderful Life,
+Gattaca, Ghostbusters, To kill a monkingbird, Hunting,
+Groundhong Day, Close Encounters of the Third Kind
+Problem-12
+ you have two sets 3,4,5,6,8 and 9,3,5,6,7 . Write a python 
+program to perform different types of set operations in 
+python.
+
+
+Python problem set
+There is a shop for selling different kind of fruits such as orange, apple, grape, guava,palm,pineapple.
+This shop is needed to display the available kind of fruits at
+the shop. Customer also want to know if the fruits they want 
+to buy are available or not in this shop. If the new items of
+fruits are arrived in the market, the shop keeper want to sell
+these new items (banana,papaya)(item can be one or more) at this shop. 
+Sometimes, there are no more fruits at the special season
+and then shopkeeper want to discard the overripe fruits (not
+good to sell for the customer) from the shop or want to
+replace with other kind of fresh fruits available in market.
+Write a python program to satisfy these condition and use
+the appropriate data type  to store the fruits and use the methods and operations to satisfy these condition.
+Write a program to maintain books information in MIIT’s 
+library as per their serial number and other information as
+shown in the following using appropriate data type in python
+at least three books. You should retrieve and print the data. You can search the book according to the ID and Title and if found you should print the message that you found that book.
+Serial number MIIT-LIB- 00001
+Title= Core Python Programming
+Author=Dr. R. Nageswara Rao
+ISBN=978-93-86052-30-8
+Class no =005 etc....
+Serial number MIIT-LIB- 00002
+Title= Python Cook Book
+Author=ABC
+ISBN=978-93-86352-30-9
+Class no =005 etc....
+In this case, Title , Author , ISBN and class no in the book can
+be the same for some of the books.
+
+
+Problem555555555555
+(a)The function input() takes an integer as input. State 
+whether this statement is True or False.
+(b)Membership operators ‘in’ can be used with list only. State 
+whether this statement is True or False.
+(c)State the output of executing the following expressions in 
+python:
+(25//2+3.5)<=(7.5+20)
+(60^5)==(90^70)
+(d) []==[] is True while [] is [] False.

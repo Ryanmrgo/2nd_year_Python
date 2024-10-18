@@ -1,0 +1,32 @@
+from abc import ABC, abstractmethod
+
+class InternationalCreditCard(ABC):
+    @abstractmethod
+    def dollars(self, amount):
+        pass
+    
+    @abstractmethod
+    def rupees(self, amount):
+        pass
+    
+    @abstractmethod
+    def pounds(self, amount):
+        pass
+
+class BankAccount(InternationalCreditCard):
+    def dollars(self, amount):
+        print(f"Amount in dollars: ${amount}")
+    
+    def rupees(self, amount):
+        print(f"Amount in rupees: ₹{amount}")
+    
+    def pounds(self, amount):
+        print(f"Amount in pounds: £{amount}")
+
+# Create an instance of BankAccount
+account = BankAccount()
+
+# Call methods
+account.dollars(100)
+account.rupees(1000)
+account.pounds(50)

@@ -1,0 +1,6 @@
+file2 = open("newprogram1.txt","w")
+file2.write("This is a new filen \n")
+file2.write("I am testing my test file")
+file2.write("writing one sentence by one sentence")
+file2.write("Test day is Janauary 2024")
+file2.close()
