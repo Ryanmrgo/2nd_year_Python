@@ -10,6 +10,6 @@ This folder contains Python scripts and projects developed as part of the CSE 20
 6. GUI
 7. Snake Game
 8. Exception Handling
-9. Basic introduction to Python libraries for data analysis
+   
 
 The files reflect hands-on assignments, lab exercises, and personal practice based on the course curriculum.
